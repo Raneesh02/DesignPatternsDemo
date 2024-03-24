@@ -1,4 +1,4 @@
-package org.example;
+package org.example.tests;
 
 import org.example.pages.LoginPage;
 import org.testng.annotations.Test;
