@@ -23,6 +23,8 @@ public class LoginTest extends BaseTest
         homePage.setBrand("Sony");
         homePage.setPriceFilter("10000");
 
+        //Assertions
+
     }
 
 }

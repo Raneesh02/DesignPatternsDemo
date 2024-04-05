@@ -20,6 +20,7 @@ public class LoginTestFluent extends BaseTest
         HomePageFluent homePageFluent = loginPageFluent.enterUserName("Raaj").enterPassword("pass@123").submit();
         homePageFluent.searchForProduct("tws earphone").setBrand("Sony").setPriceFilter("10000");
 
+        //Assertions
     }
 
 }

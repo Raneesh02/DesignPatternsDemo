@@ -2,6 +2,8 @@ package org.example.pages;
 
 public class HomePage {
 
+    //Webelements and locators
+
     public void searchForProduct(String product){
         System.out.println(product + " searched");
     }
