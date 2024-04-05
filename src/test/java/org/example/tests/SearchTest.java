@@ -1,7 +1,9 @@
 package org.example.tests;
 
 import org.example.pages.HomePage;
+import org.example.pages.HomePageFluent;
 import org.example.pages.LoginPage;
+import org.example.pages.LoginPageFluent;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,20 +11,17 @@ public class SearchTest {
 
     @Test
     public void searchTest() {
-        LoginPage loginPage= new LoginPage();
-
         //Normal way of using page objects
-        loginPage.enterPassword();
-        loginPage.enterUserName();
+        LoginPage loginPage=new LoginPage();
+        loginPage.enterUserName("Raaj");
+        loginPage.enterPassword("pass@123");
         loginPage.submit();
 
         //intuitive fluent design which is more readable and concise
-        HomePage homePage = loginPage
-                .enterUserName()
-                .enterPassword()
-                .submit();
+        LoginPageFluent loginPageFluent = new LoginPageFluent();
+        HomePageFluent homePageFluent = loginPageFluent.enterUserName("Raaj").enterPassword("pass@123").submit();
 
-        homePage.searchForProduct("tws earphone")
+        homePageFluent.searchForProduct("tws earphone")
                 .setBrand("Sony")
                 .setPriceFilter("10000");
 
