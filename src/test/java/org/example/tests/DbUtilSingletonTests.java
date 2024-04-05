@@ -8,7 +8,7 @@ import utlities.MultiTh;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class DbTests extends BaseTest {
+public class DbUtilSingletonTests extends BaseTest {
 
     @Test
     public void testDBUtilMultiThreading(){
