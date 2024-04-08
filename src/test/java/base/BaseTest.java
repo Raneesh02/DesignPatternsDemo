@@ -17,6 +17,6 @@ public class BaseTest {
     public void beforeSuite() throws IOException {
 //        dbUtilSingleton = DBUtilSingleton.getInstance();
 //        dbUtil = new DBUtil();
-        pageFactory = new PageFactory();
+        pageFactory = PageFactory.getPageFactory();
     }
 }
