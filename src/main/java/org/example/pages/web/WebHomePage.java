@@ -1,6 +1,12 @@
-package org.example.pages;
+package org.example.pages.web;
 
-public class HomePage {
+import org.example.pages.basepages.HomePage;
+
+public class WebHomePage implements HomePage {
+
+    public WebHomePage(){
+        System.out.println("web homepage constructor");
+    }
 
     //Webelements and locators
 

@@ -1,22 +1,23 @@
-package org.example.pages;
+package org.example.pages.web;
 
-public class LoginPageFluent {
+public class WebLoginPage {
 
-    public LoginPageFluent enterUserName(String username){
+    //Webelements and locators
+    //Webelement userNameTxtBox= driver.findElement()s
+
+
+    public void enterUserName(String username){
         //To do method implementation
         System.out.println("User name "+ username +"entered");
-        return this;
     }
 
-    public LoginPageFluent enterPassword(String password){
+    public void enterPassword(String password){
         //To do method implementation
         System.out.println("Password" + password + " entered");
-        return this;
     }
 
-    public HomePageFluent submit(){
+    public void submit(){
         //To do method implementation
         System.out.println("Submit Clicked");
-        return new HomePageFluent();
     }
 }

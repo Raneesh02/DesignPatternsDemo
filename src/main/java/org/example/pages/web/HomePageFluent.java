@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.pages.web;
 
 public class HomePageFluent {
 
