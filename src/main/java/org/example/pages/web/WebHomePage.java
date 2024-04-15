@@ -8,7 +8,7 @@ public class WebHomePage implements HomePage {
         System.out.println("web homepage constructor");
     }
 
-    //Webelements and locators
+    //Web elements and locators
 
     public void searchForProduct(String product){
         System.out.println(product + " searched");

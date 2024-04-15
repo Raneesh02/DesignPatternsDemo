@@ -17,4 +17,9 @@ public class HomePageFluent {
         return this;
     }
 
+    public ProductDetailPage openProduct(String productName){
+        System.out.println("Opening product name "+ productName);
+        return new ProductDetailPage();
+    }
+
 }
