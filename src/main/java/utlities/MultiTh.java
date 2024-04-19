@@ -1,6 +1,6 @@
 package utlities;
 
-public class MultiTh  implements Runnable{
+public class MultiTh  extends Thread{
     @Override
     public void run() {
         DBUtilSingleton.getInstance();

@@ -15,18 +15,18 @@ public class DBUtilSingleton {
 //    }
     //Early/Eager initialization => will always initialize even if not needed
 
-    // Lazy Initialization
-    private static DBUtilSingleton dbUtil;
-
-    public static DBUtilSingleton getInstance() {
-        if(dbUtil == null){
-            dbUtil = new DBUtilSingleton();
-            System.out.println("DBUtilSingleton Instance Created" + dbUtil.hashCode());
-        }
-        System.out.println("DBUtilSingleton Instance Returned" + dbUtil.hashCode());
-        return dbUtil;
-    }
-    // Lazy Initialization
+//    // Lazy Initialization
+//    private static DBUtilSingleton dbUtil;
+//
+//    public static DBUtilSingleton getInstance() {
+//        if(dbUtil == null){
+//            dbUtil = new DBUtilSingleton();
+//            System.out.println("DBUtilSingleton Instance Created" + dbUtil.hashCode());
+//        }
+//        System.out.println("DBUtilSingleton Instance Returned" + dbUtil.hashCode());
+//        return dbUtil;
+//    }
+//    // Lazy Initialization
 
 //     // Thread Safe
 //    private static DBUtilSingleton dbUtil;
@@ -41,26 +41,26 @@ public class DBUtilSingleton {
 //    }
 //    //Thread Safe
 
-//    //Double Locking Thread Safe
-//    private static DBUtilSingleton dbUtil;
-//
-//    public static DBUtilSingleton getInstance() {
-//        if(dbUtil == null){
-//            System.out.println("Thread inside if waiting to create resource");
-//            synchronized (DBUtilSingleton.class) {
-//                if(dbUtil == null){
-//                    dbUtil = new DBUtilSingleton();
-//                    System.out.println("DBUtilSingleton Instance Created" + dbUtil.hashCode());
-//                }
-//                else {
-//                    System.out.println("Double locking worked");
-//                }
-//            }
-//        }
-//        System.out.println("DBUtilSingleton Instance Returned" + dbUtil.hashCode());
-//        return dbUtil;
-//    }
-//    //Double Locking Thread Safe
+    //Double Locking Thread Safe
+    private static DBUtilSingleton dbUtil;
+
+    public static DBUtilSingleton getInstance() {
+        if(dbUtil == null){
+            System.out.println("Thread inside if waiting to create resource");
+            synchronized (DBUtilSingleton.class) {
+                if(dbUtil == null){
+                    dbUtil = new DBUtilSingleton();
+                    System.out.println("DBUtilSingleton Instance Created" + dbUtil.hashCode());
+                }
+                else {
+                    System.out.println("Double locking worked");
+                }
+            }
+        }
+        System.out.println("DBUtilSingleton Instance Returned" + dbUtil.hashCode());
+        return dbUtil;
+    }
+    //Double Locking Thread Safe
 
     public void runQuery(String query){
         System.out.println("DBUtilSingleton Query  run successful" + query + " " + this.hashCode() );

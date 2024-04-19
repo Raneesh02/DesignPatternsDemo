@@ -13,9 +13,20 @@ public class DbUtilSingletonTests extends BaseTest {
     @Test
     public void testDBUtilMultiThreading(){
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
+        System.out.println(Runtime.getRuntime().availableProcessors());
         for(int i=0;i<100;i++){
             executorService.execute(new MultiTh());
+        }
+
+        executorService.shutdown();
+
+    }
+
+    @Test
+    public void testDBUtilMultiThreading2(){
+        for(int i=0;i<100;i++) {
+            MultiTh t1 = new MultiTh();
+            t1.start();
         }
 
     }
